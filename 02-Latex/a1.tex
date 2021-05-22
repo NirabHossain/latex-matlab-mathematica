@@ -1,0 +1,122 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage[colorlinks]{hyperref}
+
+\newcommand{\V}{\vspace{.5cm}}
+\newcommand{\Hs}{\hspace{1cm}}
+\marksnotpoints
+\pointsinrightmargin
+\bracketedpoints
+\newcommand{\R}{\color{red}}
+\newcommand{\G}{\color{green}}
+\newcommand{\B}{\color{blue}}            %Color
+\newcommand{\Gr}{\color{gray}}
+
+
+\begin{document}
+	\begin{center}
+		{\B\Huge Assignment 02}
+	\end{center}
+\V
+	\begin{flushright}
+		Submitted by- {\sf Md. Nirab Hossain\\ FH-020-023}
+	\end{flushright}
+\V\V
+	\begin{center}
+	\fbox{\parbox{5.5in}{\centering
+		{\bf Third Year B.S. (Honours) First Incourse Examination 2017\\Subject: Applied Mathematics\\University of Dhaka\\Course Name: Partial Differential and Integral Equations\\Course No: AMTH 303\Hs Full Marks: 23\Hs Time: 1 hour\\}
+	}}
+	\V 
+	\end{center}
+	\begin{center}
+			Answer all the questions. Numbers given in right margin indicate full marks.
+	\end{center}
+\begin{questions}
+	\question[6] What is quasilinear equation? Classify the following partial differential equations as linear/nonlinear/quasilinear/semilinear, homogeneous/nonhomogeneous with their order.\\
+	(i) $u_t+xu_{xxy}+uu_{z}=0.$\\
+	(ii)$u_{xx}+u_{yy}=x^2+y^2.$\\
+	(iii)$uu_x+u_y=2.$
+	
+	\question[5] What is transversality condition? Use the condition for the PDE $u_x+3y^{2/3}u_y=2$ subject to the initial condition $u(x,1)=1+x$ and also solve it. 
+	
+	\question[1+4] When do we get expansion fans and shocks in the solution of first order partial differential equations? Solve the IVP:\\
+		\begin{center}
+			$uu_x+u_t=0,$ 
+		\end{center}with\\
+		\begin{center}
+			\[  u(x,0)= \left\{
+				\begin{array}{cc}
+					x+1,& \ x<0 \\
+					x+2,& \ x>0. \\
+				\end{array} 
+			\right. \]
+		\end{center}
+	\question[4]Classify the given second order PDE and find the general solution of\\
+	\begin{center}
+		$-4u_{tt}-12u_{xt}+9u_{xx}=0.$
+	\end{center}
+	\question[5] Solve the heat conduction problem using a suitable method:
+	\begin{center}
+		$u_t=17u_{xx},$ \Hs $0<x<\pi ,\Hs t>0$ 
+	\end{center}
+	with the boundary conditions $u(0,t)=u(\pi,t)=0,t\ge 0$ and initial condition 
+	\begin{center}
+		\[  u(x,0)= \left\{
+		\begin{array}{cc}
+		0,& \ 0\le x\le \pi /2 \\
+		2,& \ \pi/2\le x\le \pi. \\
+		\end{array} 
+		\right. \]
+	\end{center}
+	
+\end{questions}
+
+
+\pagebreak
+	\noindent In Tables $ (4.1-4.4) $ we present the values of the Nusselt number,\textit{Nu} and the root mean square velocity, $V_{rms}$ with the variation of internal heating parameter at two pressure dependence parameter values,$\mu=0.5,1.0$. At a fixed pressure dependence parameter $\mu$,we are interested to see how Nusselt number, \textit{Nu} and root mean square velocity, $V_{rms}$ change with the viscosity constant, $\Delta\eta$ and with the increase of internal heating.We keep the pressure dependence parameter $\mu$ fixed and adjust the temperature dependence parameter $\epsilon$ to increase viscosity contrast across the layer. \\
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{\extracolsep{14pt}}ccccccc@{}}
+		\hline
+		\multirow{2}{*}{$\Delta\eta$}& \multirow{2}{*}{$\mu$}  &\multirow{2}{*}{ $\epsilon$  }&\multicolumn{2}{c}{H=1.0} &\multicolumn{2}{c}{H=0.5}\\
+		\cline{4-5}\cline{6-7}
+		 &&& Nu   &  $V_{rms}$ & Nu & $V_{rms}$\\
+		\hline
+		$10^5$ & $0.5$ & $0.7383$ & $10.3751$ & $1155.5475$& $9.8184$& $919.8284$\\
+		$10^7$ & $0.5$ & $0.5274$ & $9.0908$ & $1062.7726$ & $8.6348$ & $840.2690$ \\
+		$10^{10}$ & $0.5$ & $0.369$ & $8.0388$ & $975.0249$ & $7.6723$ &$767.3136$\\
+		$10^{12}$ & $0.5$ & $0.3076$ & $7.5291$ & $928.3457$ & $7.2104$ & $729.9617$\\
+		$10^{15}$ & $0.5$ & $0.246$ & $6.9512$ & $869.5698$ & $6.6926$ & $684.8550$\\
+		
+		\hline
+	\end{tabular}
+	\renewcommand\thetable{4.1}
+	\caption{Values of Nusselt number Nu and RMS velocity $V_{rms}$ using cutoff viscosity function with internal heating at $Ra=10^7$ and $\theta_0=0.1$}.
+	\label{tab:Table 4.1}
+\end{table}	
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{\extracolsep{14pt}}ccccccc@{}}
+		\hline
+		\multirow{2}{*}{$\Delta\eta$}& \multirow{2}{*}{$\mu$}  &\multirow{2}{*}{ $\epsilon$  }&\multicolumn{2}{c}{H=1.0} &\multicolumn{2}{c}{H=0.5}\\
+\cline{4-5}\cline{6-7}
+&&& Nu   &  $V_{rms}$ & Nu & $V_{rms}$\\
+		\hline
+		$10^5$ & $0.5$ & $0.7383$ & $9.5009$ & $765.6941$ & $9.4871$ & $650.9796$ \\
+		$10^7$ & $0.5$ & $0.5274$ & $8.4302$ & $706.7714$& $8.5180$  & $612.3195$    \\
+		$10^{10}$ & $0.5$ & $0.369$ & $7.5643$ & $654.5322$& $7.7421 $ & $580.5459$  \\
+		$10^{12}$ & $0.5$ & $0.3076$ & $7.1511$ & $628.7291$& $7.3825$ & $566.3980$  \\
+		$10^{15}$ & $0.5$ & $0.246$ & $6.6917$ & $598.7491$ & $6.9842$ & $551.5412$ \\
+		\hline
+	\end{tabular}
+	\renewcommand\thetable{4.2}		
+	\caption{Values of Nusselt number Nu and RMS velocity $V_{rms}$ using cutoff viscosity function with internal heating at $Ra=10^7$ and $\theta_0=0.1$}.
+\end{table}
+\end{document}

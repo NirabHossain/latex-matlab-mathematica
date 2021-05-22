@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+	\title{Assignment 01}
+	\author{Md. Abul Kashem\\
+		 SM-020-053}
+	
+	\date{\today}
+	\maketitle
+	
+	\flushleft \huge \textbf{\LaTeXe Exercises}\\
+	\Large \textbf{Text Exercises}\\
+	\large \textbf{Easy}
+	\begin{enumerate}
+		\item A simple test sentence: the quick brown fox jumps over the lazy dog.
+		
+		\item \textbf{Bold} and \textit{italic} fonts may be used to emphasis to the text. It is also possible to use \textsf{sans-serif} and \texttt{typewriter-style} fonts.
+		
+		\item The \LaTeX language uses some special characters that must be preceded by a \textbackslash or they will not be printed. These include \$ \& \% \# \{ \} \textasciitilde \textasciicircum 
+		
+		\item Leaving a blank line between sentences marks a break between paragraphs. \\
+		A new paragraph should contain a new idea, of course. 
+		
+		\item It's possible.\\
+		to break the lines\\
+		wherever you like. You can move the text\\
+		\hspace*{3 cm}horizontally using the \textbackslash hsapce* command. (The gap is 3 cm in this case).\vspace*{1.5 cm} \\
+		You can also move the text vertically using the \textbackslash vspace* command. (Now the gap is 1.5 cm). This only works between paragraphs.
+		
+		\item Font size can be varied from \tiny tiny \scriptsize up \footnotesize to \small the \normalsize normalsize \large and \Large then \LARGE up \huge to \Huge Huge.\normalsize \textit{This is an example in which font size matters.} 
+	\end{enumerate}
+	
+	\large \textbf{Medium}
+	
+	\begin{enumerate}
+		
+		\item \LaTeXe  uses environments to perform useful functions; for example,\\
+		\begin{center}
+			center (note US spelling) environment,
+		\end{center}
+		flushleft environment,\\
+		
+		\item Environments can also be used to make lists:
+		
+		\begin{itemize}
+			\item itemize does not number list entries
+			\item bullet points are used
+		\end{itemize}
+		
+		\begin{enumerate}	
+			\item[1.] enumerate does number the entries
+			\item[2.] in fact, enumerate was used to generate the example numbers on this sheet.
+		\end{enumerate}
+		
+%		\item \texttt{In the verbatim environment, text will be printed directly \textbackslash emph\{latex commands will not be executed\} \hspace*{3cm} and spaces are important.}
+		
+		\item Tables can also be generated easily using environments:\\
+		\centering
+		\begin{tabular}{ll}
+			1.0 &One\\
+			2.0 &Two\\
+			3.0 &Three\\
+		\end{tabular}
+	\end{enumerate}
+	
+	\large \textbf{Tricky Stuff}
+	
+	\begin{enumerate}
+		\item Quick tricky tables can be constructed\\
+		\begin{tabular}{|r|c|l|}
+			\hline
+			\multicolumn{3}{|c|}{\textbf{Famous Dead Mathematicians}}\\
+			\hline
+			\textit{Name} &\textsf{Fields of study}&\texttt{Survives}\\
+			\hline
+			Archimedes&Geometry, Bath water & A Principle, An axiom\\
+			&Ways of killing Romans &\\
+			\hline
+			Euler&You name it,&An equation,A constant,\\
+			&he studied it&A formula, A method\\
+			\hline
+			\huge Gauss&\normalsize integrations, integers& A distribution, A theorem\\
+			\hline
+		\end{tabular}
+		
+		\item You\vspace*{-0.2 cm}\\
+		\hspace*{1 cm}can also\vspace*{-0.2 cm}\\
+		\hspace*{2.5 cm}make beautiful patterns\vspace*{-0.2 cm}\\
+		\hspace*{3.5 cm}with text\vspace*{-0.2 cm}\\
+		\hspace*{2.5 cm}but then again\\
+		\hspace*{1 cm} \huge Why?\\
+	\end{enumerate}
+	
+	
+	
+	\section*{Mathematical Exercise}
+	\large \textbf{Easy}
+	
+	\begin{enumerate}
+		\item Any equation can be directly inserted into text, $x^2+1=0$
+		\item Longer (or taller) equations can be best inserted using the equation enviornment.
+		\begin{equation}
+		\int \frac{x^2+3x+1}{2x+7}\hspace{1 pt}dx
+		\end{equation}
+		An advantage that your equations will be automatically numbered.
+		
+		\item Traditional mathematics typesetting demands that variables are italicised and this is the default in math-mode. The \textbackslash \texttt{mbox} or \textbackslash \texttt{text} (part of the amsmath package) commands must be used to generate normal text. Compare\\ 
+		\begin{equation}
+		a=b+c \hspace{0.5 cm}if  b>c,
+		\end{equation}
+		to \\
+		\begin{equation}
+		a=b+c \hspace{0.5 cm} \mbox{if } b>c
+		\end{equation}
+		
+		\item There are some special commands function names
+		$$\sin^2x+\cos^2x=1, \hspace*{0.3 cm} f''(x)=\ln x $$
+		
+		\item Lots of mathematical symbols are easily accessible
+		$$\Upsilon \notin [1,\infty), \hspace*{0.2 cm} R\propto C^{\frac{1}{2}},\hspace*{0.2 cm} \mbox{as}\hspace*{0.1 cm} C\to \infty,\hspace*{0.2 cm} \sum_{k=1}^{\infty} \frac{1}{k^2}=\frac{\pi^2}{12}.  $$
+		
+		\item Vectors may be denoted using the \textbackslash \texttt{boldmath} command; i.e. the vector,\boldmath $x$ \unboldmath. Boldmath remains on until turned off with the \textbackslash \texttt{unboldmath} command. Check this now $a^2+b^k=c^k$
+		
+		\item Brackets change size automatically
+		$$\left(A+B\right), \mbox{ is smaller than} \left[\frac{A+B}{C+D}\right]

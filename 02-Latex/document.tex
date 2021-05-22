@@ -1,0 +1,57 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{multirow}
+\begin{document}
+	
+	\begin{enumerate}[(i)]
+		\item 
+		$\begin{aligned}[t]
+		v &=p\\
+		&=c
+		\end{aligned}$
+		\item 
+		\begin{tabular}{c c c}
+			\toprule
+			P& Q&R\\
+			\cmidrule{1-2}
+			A& B&C\\
+			\cmidrule(lr){2-3}
+			P& Q&R\\
+			\cmidrule[2pt](lr){1-1}
+			A& B&C\\
+			\bottomrule
+		\end{tabular}
+	\item 
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\multirow{2}{*}{Name}& \multicolumn{4}{|c|}{Subjects}& \multirow{2}{*}{Total}\\
+			\cline{2-5}
+		&	Math & Phy & Chem & Eng&\\
+			\hline
+			\hline
+			Robin & 80 & 68 & 60 & 57 & 265\\
+			\hline
+			Robin & 80 & 68 & 60 & 57 & 265\\
+			\hline
+			Robin & 80 & 68 & 60 & 57 & 265\\
+			\hline
+		\end{tabular}
+	\item
+	\begin{tabular}{|c |c |c|}
+		\hline
+		\multicolumn{2}{|c|}{\multirow{2}{*}{Multirwocol}}&x\\
+		\multicolumn{2}{|c|}{} &x\\
+		\hline
+		x& x& x\\
+		\hline
+	\end{tabular}
+	\end{enumerate}
+\end{document}
+

@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{array,booktabs}
+\usepackage{multirow}
+\begin{document}
+	{\LARGE	\begin{enumerate}[(a)]
+		\item $ 
+		 \begin{aligned}[t]
+			\tilde{V_t}&=\frac{1}{(1+r)^t}\bar{\xi}\cdot\bar{S_t}\\	
+			&=\frac{1}{(1+r)^t}\sum_{i=0}^d {\xi^{(i)}}{S_t^{(i)}}\\
+			&=\sum_{i=0}^d {\xi^{(i)}}{X_t^{(i)}}\\
+			&=\bar{\xi}\cdot\bar{X_t}\quad \quad t=1,\dots,N,\\	
+		\end{aligned}$\\[3ex] 
+		
+		
+		\item
+		\begin{tabular}{*{3}{c}}
+			\toprule
+
+			A&B&C\\	
+			\cmidrule{1-2}D&E&F\\
+			\cmidrule(lr{12pt}){2-3}G&H&I\\
+			\cmidrule[.15cm](l{5pt}r{5pt}){1-1}J&H&K\\
+			\bottomrule
+		\end{tabular}\\[3ex]
+	
+	
+	
+		\item
+		
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\cline{1-6}
+				\multirow{2}{*}{Name}&\multicolumn{4}{c|}{Subjects}&\multirow{2}{*}{Total}\\
+				\cline{2-5}
+				&Math&Phy&Chem&English& \\ 
+				\midrule
+				\cline{1-6}
+			Robin&80&68&60&57&265\\
+			\cline{1-6}
+			Julie&72&62&66&63&263\\
+			\cline{1-6}
+			Robin&75&70&71&69&285\\
+			
+			\cline{1-6}
+		\end{tabular}
+		
+
+
+	\end{enumerate}
+	}
+\end{document}

@@ -1,0 +1,60 @@
+% A simple fault tree
+% Author: Zhang Long, Mail: zhangloong[at]gmail.com
+%\def\pgfsysdriver{pgfsys-dvipdfm.def}
+\documentclass{minimal}
+\usepackage{tikz}
+\usetikzlibrary{shapes.gates.logic.US,trees,positioning,arrows}
+\begin{document}
+
+\begin{center}		
+\begin{tikzpicture}[
+% Gates and symbols style
+and/.style={and gate US,thick,draw,fill=red!60,rotate=90,
+	anchor=east,xshift=-1mm},
+or/.style={or gate US,thick,draw,fill=blue!60,rotate=90,
+	anchor=east,xshift=-1mm},
+be/.style={circle,thick,draw,fill=green!60,anchor=north,
+	minimum width=0.7cm},
+tr/.style={buffer gate US,thick,draw,fill=purple!50,rotate=90,
+	anchor=east,minimum width=0.8cm},
+% Label style
+label distance=3mm,
+every label/.style={blue},
+% Event style
+event/.style={circle,thick,draw,fill=yellow!20,text width=2cm,
+	text centered,font=\sffamily,anchor=north},
+% Children and edges style
+edge from parent/.style={very thick,draw=black!70},
+edge from parent path={(\tikzparentnode.south) -- ++(0,-1.05cm)
+	-| (\tikzchildnode.north)},
+level 1/.style={sibling distance=9cm,level distance=3cm,
+	growth parent anchor=south,nodes=event},
+level 2/.style={sibling distance=3cm},
+%%  For compatability with PGF CVS add the absolute option:
+%   absolute
+]
+%% Draw events and edges
+\node (g1) [event] {\footnotesize Part of Cryptography}
+child{node (a1) {\small Cryptographic Algorithm and protocols}
+	child {node (b11) {Symmetric encryption}}
+	child {node (b12) {Asymmetric encryption}}
+	child {node (b13) {Data integrity algorithms}}
+	child {node (b14) {\footnotesize Authentication protocols}}
+}
+child{node (a2) {Network and Intenet Security}
+	child {node(b21){measures to deter, prevent,
+			detect, and correct security violations}}
+}
+;
+\node [tr]	at ( g1.south){};
+\node [or]	at ( a1.south){};
+\node [or]	at (a2.south){};
+\node [be]	at (b11.south){};
+\node [be]	at (b12.south){};
+\node [be]	at (b13.south){};
+\node [be]	at (b14.south){};
+
+\end{tikzpicture}
+\tt The block diagram of Cryptographic area
+\end{center}
+\end{document}

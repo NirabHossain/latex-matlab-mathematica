@@ -1,0 +1,266 @@
+%\parindent0pt  \parskip10pt             % make block paragraphs
+%\raggedright                            % do not right justify
+\usepackage{listings}
+\usepackage{amsthm,epsfig,epstopdf}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Page number Editing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ORange}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\newlength\FHoffset
+\fancyheadoffset{\FHoffset}
+
+
+%\lhead[]{\chaptername \, \thechapter}
+\chead[]{\leftmark}
+%\rhead[]{1/1/2014}
+
+
+
+%\lfoot{}
+%\cfoot{}
+%\rfoot[]{\thesection}
+
+
+%%%%%%%%%%%%  For Book Class %%%%%%%%%%%
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[LE,RO]{Overleaf}
+%\fancyhead[RE,LO]{Guides and tutorials}
+%\fancyfoot[CE,CO]{\leftmark}
+%\fancyfoot[LE,RO]{\thepage}
+
+
+
+
+%\pagestyle{headandfoot}
+%\runningheadrule
+%%\firstpageheader{Math I}{Exam 1- Page \thepage\ of \numpages}{1/1/2014}
+%\runningheader{Math I}{Exam 1- Page \thepage\ of \numpages}{1/1/2014}
+%\firstpagefooter{}{}{}
+%\runningfooter{}{}{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Page number Eiditing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\ds}{\displaystyle}
+
+
+
+
+
+
+
+
+
+
+\usepackage{titlesec}
+
+
+
+
+%\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Times New Roman
+%\usepackage{mathptmx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.gates.logic.US,trees,positioning,arrows}
+\usetikzlibrary{shapes,snakes}
+
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{xcolor}                 %Color and font
+\usepackage{amssymb}
+
+
+\usepackage[colorlinks]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=black!60,
+	pdftitle={Cryptography},
+	pdfauthor={Md. Nirab Hossain},
+	pdfsubject={Algorithm analyses of AES and RSA}
+}
+
+
+
+%\usepackage[a4paper , inner =1.5in , outer =1in , top=1in , bottom=1in, headsep=10pt]{geometry}
+\usepackage[doublespacing]{setspace}
+\usepackage[english]{babel}
+
+\usepackage{parskip}
+
+\newcommand{\R}{\color{red}}
+\newcommand{\G}{\color{green}}
+\newcommand{\B}{\color{blue}}            %Color
+\newcommand{\Gr}{\color{gray}}
+\definecolor{ORange}{HTML}{FF7F00}
+\newcommand{\Or}{\color{ORange}}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{Darkgreen}{rgb}{0,0.4,0}
+
+\newcommand{\vs}{\vspace{1cm}}
+\newcommand{\Vfs}{\vspace{.5cm}}
+\newcommand{\Vs}{\vspace{2cm}}
+\newcommand{\VL}{\vspace{4cm}}
+\newcommand{\Hs}{\hspace{2cm}}
+\newcommand{\hs}{\hspace{1cm}}
+\newcommand{\HL}{\hspace{4cm}}
+
+%\newcommand{\mod}{mod\hspace{.1cm}}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{ {./images/} }
+
+\usepackage{algorithm2e}
+\usepackage{multicol}
+
+\usepackage{varwidth}
+
+
+\usepackage{smartdiagram}
+\usepackage{gensymb}
+
+%\iffalse
+%\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{exmp}{Example}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+%\fi
+
+\titleformat
+{\chapter} [display]{\Huge\sc\B}{Chapter \ 10}{0.5ex}{\Or\bf\sc \Vs}
+
+
+
+\newcommand{\A}{ \author{\it\Gr Md. Nirab Hossain}}
+\newcommand{\C}{\title}
+\newcommand{\D}{\date{August 9, 2019} \maketitle}
+
+%\newtheorem{theorem}{Theorem}[chapter]
+
+\titleformat{\section}
+{\vspace{1.3cm}\Large\bfseries}
+{\thesection}{0.5em}{}
+
+%\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+\titleformat{\subsection}
+{\vspace{.75cm}\large\bfseries}
+{\thesubsection}{0.5em}{}
+
+
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,
+	language=C++,
+	captionpos=b,
+	tabsize=3,
+	frame=lines,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+	showstringspaces=false,
+	basicstyle=\footnotesize,
+	%  identifierstyle=\color{magenta},
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color{green},
+	stringstyle=\color{Darkgreen}
+}
+
+
+
+
+
+
+\title{%\fontsize{20}{20}\selectfont
+	%{\bfseries\Huge\Or\sc A Comperative Study of \\AES \& RSA \\Cryptographic Algorithms}\\[2ex]
+	{\bf\Or\Huge\vspace{-2cm} General Math 9-10}\\[10ex]
+	%	{\begin{align*}
+	%			\bf\large\sc Course\;\; Title\quad &: \quad\bf\large\sc Honours\; Project\\
+	%			\bf\large\sc Course\; Code\quad &: \quad\bf\large\sc AMTH\; 460\\
+	%	\end{align*}
+	%	}
+	\if
+	{\Large
+		\begin{minipage}{0.8\textwidth}
+			\centering			
+			\begin{tabular}{p{3.7cm}cp{3.8cm}}
+				Course Title& :&\hspace{.15cm}  Honours Project\\[-1ex]
+				Course Code & :&\hspace{.15cm} AMTH 460\\[4ex]
+			\end{tabular}
+			
+			{\bfseries\Large Submitted by\\[1ex]}
+			\begin{tabular}{p{3.7cm}cp{3.8cm}}
+				Roll No.& :& \hspace{.15cm} FH-020-023\\[-1ex]
+				Academic Year&:&\hspace{.15cm} 2018-19\\[-1ex]
+				Registration No.&:&\hspace{.15cm} 2015-217-291\\[-1ex]
+				Session & :& \hspace{.15cm} 2015-16\\[10ex]
+			\end{tabular}
+			
+		\end{minipage}
+		
+	}
+	\fi
+	
+	%	\bf\large\sc Course Title: Honors Project\\Course Code: AMTH 460\\[4ex]
+%	{\includegraphics[width=1.8in]{pics/dd}}\\[1ex]
+	{\bf\Large Department of Applied Mathematics\\[-.5ex]
+		University of Dhaka\\[-.8ex]
+		Dhaka-1000}
+}
+
+%\author{\LARGE Md. Nirab Hossain}
+\date{}%August 9, 2019}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+\makeatletter
+\def\headrule{{
+		\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+		\vskip 0pt% change here
+		\hrule\@height\headrulewidth\@width\headwidth   
+		\vskip-\headrulewidth%
+}}
+\makeatother
+
+\pagestyle{fancy}
