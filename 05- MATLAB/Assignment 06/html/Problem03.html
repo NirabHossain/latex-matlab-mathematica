@@ -1,0 +1,226 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Problem03</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-01-25"><meta name="DC.source" content="Problem03.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput">clc
+clear
+a=[2 4 4 1; 10 3 7 7; 6 7 20 5];d=[50 100 150 200];s=[150;200;150];m=3;n=4;
+<span class="comment">%a=[5 4 3; 8 4 3; 9 7 5];d=[300 200 200];s=[100;300;300];m=3;n=3;</span>
+Print_Problem=[a s;d sum(d)]
+fprintf(<span class="string">"The initial Matrix,"</span>)  <span class="comment">%%%%%%   Initial function created  %%%</span>
+[b,Initial_LCM_Cost]=init(a,d,s,m,n)<span class="comment">%Initial_Solution=[b s;d sum(d)]</span>
+
+fprintf(<span class="string">"Optimal Cij-Ui-Vj Matrix,"</span>)
+c=optCheck(a,b,m,n) <span class="comment">%%%%%%%%%% Optimality   %%%%%%%%%%%</span>
+<span class="keyword">while</span>(sum(sum(c&lt;0))~=0)
+[p,q]=find(min(min(c))==c,1);
+T=0;
+<span class="keyword">for</span> i=1:m
+    <span class="keyword">for</span> j=1:n
+        <span class="keyword">if</span>(b(i,j)~=0 &amp;&amp; (i==p||j==q))
+            <span class="keyword">if</span>(i==p)
+                <span class="keyword">for</span> k=1:m
+                    <span class="keyword">if</span>(b(k,q)~=0 &amp;&amp; b(k,j)~=0)
+                          T=-5;
+                          dsub=min(b(k,q),b(i,j));
+                          b(p,q)=b(p,q)+dsub;
+                          b(k,q)=b(k,q)-dsub;
+                          b(k,j)=b(k,j)+dsub;
+                          b(i,j)=b(i,j)-dsub;
+                          <span class="keyword">break</span>
+                    <span class="keyword">end</span>
+                <span class="keyword">end</span>
+            <span class="keyword">else</span>
+                <span class="keyword">for</span> k=1:n
+                    <span class="keyword">if</span>(b(k,q)~=0 &amp;&amp; b(k,j)~=0)
+                          T=-5;
+                          dsub=min(b(i,j),b(p,k));
+                          b(p,q)=b(p,q)-dsub;
+                          b(i,j)=b(i,j)-dsub;
+                          b(i,k)=b(i,k)-dsub;
+                          b(p,k)=b(p,k)-dsub;
+                          <span class="keyword">break</span>
+                    <span class="keyword">end</span>
+                <span class="keyword">end</span>
+
+            <span class="keyword">end</span>
+            <span class="keyword">break</span>
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+    <span class="keyword">if</span>(T==-5)
+        <span class="keyword">break</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+fprintf(<span class="string">"Optimal Cij-Ui-Vj Matrix,"</span>)
+c=optCheck(a,b,m,n) <span class="comment">%%%%%%%%%% Optimality   %%%%%%%%%%%</span>
+fprintf(<span class="string">"Cost Matrix,"</span>)
+b
+<span class="keyword">end</span>
+fprintf(<span class="string">"The optimality condition satisfied and hence the cost is: %d\n\n"</span>,sum(sum(b.*a)))
+</pre><pre class="codeoutput">
+Print_Problem =
+
+     2     4     4     1   150
+    10     3     7     7   200
+     6     7    20     5   150
+    50   100   150   200   500
+
+The initial Matrix,
+b =
+
+     0     0     0   150
+     0   100   100     0
+    50     0    50    50
+
+
+Initial_LCM_Cost =
+
+        2700
+
+Optimal Cij-Ui-Vj Matrix,
+c =
+
+     0    -8   -12     0
+    17     0     0    15
+     0    -9     0     0
+
+Optimal Cij-Ui-Vj Matrix,
+c =
+
+     0     4     0     0
+     5     0     0     3
+     0     3    12     0
+
+Cost Matrix,
+b =
+
+     0     0    50   100
+     0   100   100     0
+    50     0     0   100
+
+The optimality condition satisfied and hence the cost is: 2100
+
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clc
+clear
+a=[2 4 4 1; 10 3 7 7; 6 7 20 5];d=[50 100 150 200];s=[150;200;150];m=3;n=4;
+%a=[5 4 3; 8 4 3; 9 7 5];d=[300 200 200];s=[100;300;300];m=3;n=3;
+Print_Problem=[a s;d sum(d)]
+fprintf("The initial Matrix,")  %%%%%%   Initial function created  %%%
+[b,Initial_LCM_Cost]=init(a,d,s,m,n)%Initial_Solution=[b s;d sum(d)]
+
+fprintf("Optimal Cij-Ui-Vj Matrix,")
+c=optCheck(a,b,m,n) %%%%%%%%%% Optimality   %%%%%%%%%%%
+while(sum(sum(c<0))~=0)
+[p,q]=find(min(min(c))==c,1);
+T=0;
+for i=1:m
+    for j=1:n
+        if(b(i,j)~=0 && (i==p||j==q))
+            if(i==p)
+                for k=1:m
+                    if(b(k,q)~=0 && b(k,j)~=0)
+                          T=-5;
+                          dsub=min(b(k,q),b(i,j));
+                          b(p,q)=b(p,q)+dsub;
+                          b(k,q)=b(k,q)-dsub;
+                          b(k,j)=b(k,j)+dsub;
+                          b(i,j)=b(i,j)-dsub;
+                          break
+                    end
+                end
+            else
+                for k=1:n
+                    if(b(k,q)~=0 && b(k,j)~=0)
+                          T=-5;
+                          dsub=min(b(i,j),b(p,k));
+                          b(p,q)=b(p,q)-dsub;
+                          b(i,j)=b(i,j)-dsub;
+                          b(i,k)=b(i,k)-dsub;
+                          b(p,k)=b(p,k)-dsub;
+                          break
+                    end
+                end
+
+            end
+            break
+        end
+    end
+    if(T==-5)
+        break
+    end
+end
+fprintf("Optimal Cij-Ui-Vj Matrix,")
+c=optCheck(a,b,m,n) %%%%%%%%%% Optimality   %%%%%%%%%%%
+fprintf("Cost Matrix,")
+b
+end
+fprintf("The optimality condition satisfied and hence the cost is: %d\n\n",sum(sum(b.*a)))
+
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,94 @@
+
+% This LaTeX was auto-generated from MATLAB code.
+% To make changes, update the MATLAB code and republish this document.
+
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{color}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+    
+    \begin{verbatim}
+clc%%%%%%%%% PROBLEM 01 %%%%%%%%%%
+m=4;n=5;A=[-2 0 0 5 3; 3 2 1 2 2;-4 -3 0 -2 6; 5 3 -4 2 6]
+Minimax=-2000;Maximin=2000;
+for i=1:m
+    if(Minimax<min(A(i,:)))
+        Minimax=min(A(i,:));
+    end
+end
+for i=1:n
+    if(Maximin>max(A(:,i)))
+        Maximin=max(A(:,i));
+    end
+end
+if(Minimax==Maximin)
+    fprintf('The game value using manual coding is=%d\n\n',Minimax)
+else
+    fprintf('There is no saddle point\n\n')
+end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Another Way ShortCut %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Minimax=min(max(A))
+Maximin=max(min(A'))
+if(Minimax==Maximin)
+    fprintf('The game value using MATLAB command is= %d\n\n',Minimax)
+end
+\end{verbatim}
+
+        \color{lightgray} \begin{verbatim}
+A =
+
+    -2     0     0     5     3
+     3     2     1     2     2
+    -4    -3     0    -2     6
+     5     3    -4     2     6
+
+The game value using manual coding is=1
+
+
+Minimax =
+
+     1
+
+
+Maximin =
+
+     1
+
+The game value using MATLAB command is= 1
+
+The cost matrix with northwest rule is,
+b =
+
+    50   100     0     0
+     0     0   150    50
+     0     0     0   150
+
+
+TotalCost =
+
+        2650
+
+			Using LCM:
+
+Cost= 2700
+Cost Matrix,
+b =
+
+     0     0     0   150
+     0   100   100     0
+    50     0    50    50
+
+\end{verbatim} \color{black}
+    
+
+
+\end{document}
+    
